@@ -43,13 +43,14 @@ pipeline {
         stage('Deploy to AWS EC2') {
             steps {
                 script {
-                    sh '''
-                    ssh -o StrictHostKeyChecking=no -i ${PEM_PATH} ubuntu@${EC2_IP} << 'EOF'
-                        cd /home/ubuntu/my-ci-cd-project
-                        git pull origin main
+                    // Directly execute commands with SSH
+                    sh """
+                    ssh -o StrictHostKeyChecking=no -i ${PEM_PATH} ubuntu@${EC2_IP} "
+                        cd /path/to/project && 
+                        git pull origin main && 
                         sudo systemctl restart my-python-app
-                    EOF
-                    '''
+                    "
+                    """
                 }
             }
         }
