@@ -5,7 +5,7 @@ pipeline {
         GITHUB_REPO = 'https://github.com/RamyaRaveesh/my-ci-cd-repo.git'
         BRANCH_NAME = 'main'
         EC2_IP = '13.51.70.213'
-        PEM_PATH = 'C:\\Users\\ravee\\Downloads\\my-sample-app.pem'
+        PEM_PATH = '/home/ubuntu/.ssh/my-sample-app.pem'
     }
     triggers {
         githubPush() // This ensures the job triggers on GitHub push events
@@ -45,7 +45,7 @@ pipeline {
                 script {
                     sh '''
                     ssh -o StrictHostKeyChecking=no -i ${PEM_PATH} ubuntu@${EC2_IP} << 'EOF'
-                        cd /path/to/project
+                        cd /home/ubuntu/my-ci-cd-project
                         git pull origin main
                         sudo systemctl restart my-python-app
                     EOF
