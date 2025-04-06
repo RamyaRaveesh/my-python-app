@@ -46,7 +46,7 @@ pipeline {
                     // Directly execute commands with SSH
                     sh """
                     ssh -o StrictHostKeyChecking=no -i ${PEM_PATH} ubuntu@${EC2_IP} "
-                        cd /path/to/project && 
+                        cd /home/ubuntu/my-ci-cd-project && 
                         git pull origin main && 
                         sudo systemctl restart my-python-app
                     "
