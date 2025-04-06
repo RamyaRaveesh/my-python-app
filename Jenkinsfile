@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         // Define environment variables like AWS keys, etc.
-        GITHUB_REPO = 'https://github.com/RamyaRaveesh/my-ci-cd-repo.git'
+        GITHUB_REPO = 'https://github.com/RamyaRaveesh/my-python-app.git'
         BRANCH_NAME = 'main'
         EC2_IP = '13.51.70.213'  // EC2 instance public IP address
         PEM_PATH = 'C:\\Users\\ravee\\Downloads\\my-sample-app.pem' 
