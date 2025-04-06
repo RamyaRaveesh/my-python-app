@@ -5,7 +5,7 @@ pipeline {
         GITHUB_REPO = 'https://github.com/RamyaRaveesh/my-ci-cd-repo.git'
         BRANCH_NAME = 'main'
         EC2_IP = '13.51.70.213'
-        PEM_PATH = '/home/ubuntu/.ssh/my-sample-app.pem'
+        PEM_PATH = '/tmp/my-sample-app.pem'
     }
     triggers {
         githubPush() // This ensures the job triggers on GitHub push events
