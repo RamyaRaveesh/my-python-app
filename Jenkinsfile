@@ -47,14 +47,14 @@ pipeline {
                     sh """
                     ssh -o StrictHostKeyChecking=no -i ${PEM_PATH} ubuntu@${EC2_IP} '
                         # Check if directory exists, if not, create it and clone the repo
-                        if [ ! -d "/home/ubuntu/my-ci-cd-project/.git" ]; then
+                        if [ ! -d "/home/ubuntu/my-python-app/.git" ]; then
                             # Directory does not exist or is not a Git repository, so clone
-                            mkdir -p /home/ubuntu/my-ci-cd-project
-                            cd /home/ubuntu/my-ci-cd-project
+                            mkdir -p /home/ubuntu/my-python-app
+                            cd /home/ubuntu/my-python-app
                             git clone ${GITHUB_REPO} .  # Clone the repo into the directory
                         else
                             # Directory is a Git repository, so pull the latest changes
-                            cd /home/ubuntu/my-ci-cd-project
+                            cd /home/ubuntu/my-python-app
                             git pull origin ${BRANCH_NAME}  # Pull the latest changes
                         fi
 
