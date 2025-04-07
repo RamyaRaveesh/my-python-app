@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        GITHUB_REPO = 'https://github.com/RamyaRaveesh/my-ci-cd-repo.git'
+        GITHUB_REPO = 'https://github.com/RamyaRaveesh/my-python-app.git'
         BRANCH_NAME = 'main'
         EC2_IP = '51.21.197.126'
         PEM_PATH = '/tmp/my-sample-app.pem'
