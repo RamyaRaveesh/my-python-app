@@ -56,7 +56,7 @@ pipeline {
             }
         }
     }
-     post {
+     /*post {
         success {
             slackSend (
                 channel: SLACK_CHANNEL,  // Slack channel name
@@ -72,8 +72,8 @@ pipeline {
                 message: "Build Failed: ${currentBuild.fullDisplayName} - <${env.BUILD_URL}|Build URL>"
             )
         }
-     }    
-    /*post {
+     }  */  
+    post {
         always {
             emailext(
                 subject: "Jenkins Build Status: ${currentBuild.currentResult}",
@@ -87,5 +87,5 @@ pipeline {
                 to: "ramyashridharmoger@gmail.com"
             )
         }
-    }*/
+    }
 }
