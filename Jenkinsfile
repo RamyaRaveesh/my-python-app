@@ -6,7 +6,6 @@ pipeline {
         BRANCH_NAME = 'main'
         EC2_IP = '13.51.70.213'
         PEM_PATH = '/tmp/my-sample-app.pem'
-        SLACK_CHANNEL = 'build-status'
     }
     triggers {
         githubPush() // This ensures the job triggers on GitHub push events
