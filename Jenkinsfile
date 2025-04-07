@@ -73,8 +73,9 @@ pipeline {
             )
         }
      }  */  
-    post {
-        always {
+   post {
+    always {
+        script {
             emailext(
                 subject: "Jenkins Build Status: ${currentBuild.currentResult}",
                 body: """
@@ -88,4 +89,5 @@ pipeline {
             )
         }
     }
+}
 }
