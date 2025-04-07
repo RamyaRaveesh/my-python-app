@@ -56,23 +56,6 @@ pipeline {
             }
         }
     }
-     /*post {
-        success {
-            slackSend (
-                channel: SLACK_CHANNEL,  // Slack channel name
-                color: 'good',  // Green for success
-                message: "Build Successful: ${currentBuild.fullDisplayName} - <${env.BUILD_URL}|Build URL>"
-            )
-        }
-
-        failure {
-            slackSend (
-                channel: SLACK_CHANNEL,  // Slack channel name
-                color: 'danger',  // Red for failure
-                message: "Build Failed: ${currentBuild.fullDisplayName} - <${env.BUILD_URL}|Build URL>"
-            )
-        }
-     }  */  
    post {
     always {
         script {
